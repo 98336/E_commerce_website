@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <link rel="manifest" href="manifest.json" />
+       <title>PWA A2HS</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script> 
+      window.addEventListener('load', async () => { 
+          await registerSW(); 
+      }); 
+  
+      async function registerSW() { 
+          if ('serviceWorker' in navigator) { 
+              try { 
+                  await navigator.serviceWorker.register('serviceworker.js'); 
+              } catch (e) { 
+                  console.log('SW registration failed'); 
+              } 
+          } 
+      } 
+  </script>
+    
+  </body>
+</html>
